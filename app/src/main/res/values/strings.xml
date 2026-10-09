@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Projek_Marcel</string>
     <string name="deskripsi">Silahkan login terlebih dahulu</string>
-    <string name="deskripsi_aplikasi">Aplikasi POS (Point of Sale) merupakan aplikasi yang digunakan untuk mengelola dan mempermudah proses transaksi penjualan pada berbagai jenis usaha, seperti toko, restoran, kafe, dan bisnis lainnya. Aplikasi ini berfungsi sebagai sistem kasir digital yang dapat membantu pengguna dalam mencatat produk yang dijual, mengelola transaksi, menghitung total pembayaran, mencatat metode pembayaran, serta menyimpan riwayat transaksi secara terstruktur. </string>
+    <string name="deskripsi_aplikasi_1">MoodNote merupakan aplikasi Android yang dirancang untuk membantu pengguna mencatat dan memantau suasana hati sehari-hari melalui jurnal digital sederhana. Aplikasi ini bertujuan untuk meningkatkan kesadaran pengguna terhadap perasaan dan pengalaman yang dialami setiap hari sebagai bagian dari upaya menjaga kesehatan mental dan kesejahteraan diri.</string>
+    <string name="deskripsi_aplikasi_2">Pengguna dapat memilih suasana hati yang dirasakan, seperti senang, biasa, sedih, marah, atau lelah, kemudian menambahkan catatan singkat mengenai pengalaman atau kejadian yang dialami. Setiap catatan dapat disimpan dan dilihat kembali melalui halaman riwayat mood. Pengguna juga dapat melihat detail catatan, mengedit, serta menghapus catatan yang telah dibuat. </string>
+    <string name="deskripsi_aplikasi_3">MoodNote memiliki antarmuka yang sederhana, nyaman, dan mudah digunakan dengan perpaduan warna biru dan lavender yang memberikan kesan tenang. Melalui fitur-fitur tersebut, MoodNote diharapkan dapat menjadi sarana bagi pengguna untuk melakukan refleksi diri dan memahami perubahan suasana hati dari waktu ke waktu. </string>
 
 </resources>
