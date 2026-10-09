@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Projek_Marcel</string>
+    <string name="deskripsi">Silahkan login terlebih dahulu</string>
+    <string name="deskripsi_aplikasi">Aplikasi POS (Point of Sale) merupakan aplikasi yang digunakan untuk mengelola dan mempermudah proses transaksi penjualan pada berbagai jenis usaha, seperti toko, restoran, kafe, dan bisnis lainnya. Aplikasi ini berfungsi sebagai sistem kasir digital yang dapat membantu pengguna dalam mencatat produk yang dijual, mengelola transaksi, menghitung total pembayaran, mencatat metode pembayaran, serta menyimpan riwayat transaksi secara terstruktur. </string>
+
+</resources>
