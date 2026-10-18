@@ -7,9 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.util.Log
 import android.content.Intent //p4
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar //p4
 import com.google.android.material.dialog.MaterialAlertDialogBuilder //p4
 import com.example.projek_marcel.databinding.ActivityMainBinding
+import com.example.projek_marcel.toolbar.ToolbarActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var  binding: ActivityMainBinding
@@ -19,19 +21,18 @@ class MainActivity : AppCompatActivity() {
 
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
+        val editor = sharedPref.edit()
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val user =intent.getStringExtra("username")
-        val pass = intent.getStringExtra("password")
-        val umur = intent.getIntExtra("umur", 0)
-        Log.e("Hasil", "$user $umur $pass")
-        binding.txtUsername.text= "username: $user"
-        binding.txtPassword.text = "password: $pass"
+
+        val username = sharedPref.getString("username", "")
+        binding.txtUsername.text = "Halo "+ username + "!"
 
 
 //        alert
@@ -49,18 +50,28 @@ class MainActivity : AppCompatActivity() {
                 .setCancelable(false)
                 .show()
         }
-        binding.btnSnackbar.setOnClickListener {
-            Snackbar.make(binding.root, "Ini adalah Snack Bar",
-                Snackbar.LENGTH_LONG)
-                .setAction("BATAL"){
-//                    val intent = Intent(this, LoginActivity::class.java)
-//                    startActivity(intent)
 
-                }.show()
+
+
+//        p5
+        binding.btnLihatDetail.setOnClickListener {
+            startActivity(Intent(this, ToolbarActivity::class.java))
         }
-        binding.txtLihatDetail.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
+//        p6
+        binding.logout.setOnClickListener {
+
+            AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    editor.clear()
+                    editor.apply()
+                    startActivity(Intent(this, HalamanLogin::class.java))
+                    dialog.dismiss()
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
+                .show()
         }
 
 
