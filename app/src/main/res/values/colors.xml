@@ -6,6 +6,8 @@
     <color name="blue">#031DFF</color>
     <color name="primary_color">#6C83E8</color>
     <color name="background_color">#E3ECFD</color>
+    <color name="background_color_common">#E3ECFD</color>
+
     <color name="btnForward">#777777</color>
     <color name="deskripsi_text_color">#838383</color>
 

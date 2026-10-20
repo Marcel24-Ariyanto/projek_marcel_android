@@ -1,0 +1,40 @@
+<!--
+  ~ Copyright (C) 2026 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960"
+    android:tint="#FFFFFF">
+
+    <!-- 3 Ring Binder Atas -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M310,120 A30,30 0 0,1 340,150 L340,240 A30,30 0 0,1 280,240 L280,150 A30,30 0 0,1 310,120 Z
+                          M480,120 A30,30 0 0,1 510,150 L510,240 A30,30 0 0,1 450,240 L450,150 A30,30 0 0,1 480,120 Z
+                          M650,120 A30,30 0 0,1 680,150 L680,240 A30,30 0 0,1 620,240 L620,150 A30,30 0 0,1 650,120 Z"/>
+
+    <!-- Body Dokumen, Garis Teks, dan Lipatan Kertas Kanan Bawah -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M280,200 L680,200 C746,200 800,254 800,320 L800,640 L640,800 L280,800 C214,800 160,746 160,680 L160,320 C160,254 214,200 280,200 Z
+                          M280,260 C247,260 220,287 220,320 L220,680 C220,713 247,740 280,740 L600,740 L600,600 C600,578 618,560 640,560 L740,560 L740,320 C740,287 713,260 680,260 L280,260 Z
+                          M660,620 L660,712 L712,660 L660,620 Z
+                          M300,340 L660,340 C677,340 690,353 690,370 C690,387 677,400 660,400 L300,400 C283,400 270,387 270,370 C270,353 283,340 300,340 Z
+                          M300,470 L660,470 C677,470 690,483 690,500 C690,517 677,530 660,530 L300,530 C283,530 270,517 270,500 C270,483 283,470 300,470 Z
+                          M300,600 L520,600 C537,600 550,613 550,630 C550,647 537,660 520,660 L300,660 C283,660 270,647 270,630 C270,613 283,600 300,600 Z"/>
+
+</vector>

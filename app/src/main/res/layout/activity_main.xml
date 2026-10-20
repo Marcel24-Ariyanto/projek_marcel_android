@@ -140,18 +140,6 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/logout"
-        android:layout_width="103dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="#FF0000"
-        android:text="Logout"
-        android:textSize="11dp"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
 
     <TextView
         android:id="@+id/txtUsername"
@@ -284,5 +272,17 @@
             ```
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logout"
+        android:layout_width="103dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#FF0000"
+        android:text="Logout"
+        android:textSize="11dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.util.Log
 import android.content.Intent //p4
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.snackbar.Snackbar //p4
 import com.google.android.material.dialog.MaterialAlertDialogBuilder //p4
 import com.example.projek_marcel.databinding.ActivityMainBinding
 import com.example.projek_marcel.toolbar.ToolbarActivity
