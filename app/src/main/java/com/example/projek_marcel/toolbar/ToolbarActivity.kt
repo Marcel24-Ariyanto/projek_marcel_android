@@ -36,7 +36,7 @@ binding = ActivityToolbarBinding.inflate(layoutInflater)
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    binding.btnEdit.setOnClickListener {
+    binding.btnHapus.setOnClickListener {
         Snackbar.make(binding.root, "Item dihapus",
             Snackbar.LENGTH_LONG)
             .setAction("BATAL"){
