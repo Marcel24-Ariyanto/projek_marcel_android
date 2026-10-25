@@ -56,21 +56,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ToolbarActivity::class.java))
         }
 //        p6
-        binding.logout.setOnClickListener {
 
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah Anda yakin ingin keluar?")
-                .setPositiveButton("Ya") { dialog, _ ->
-                    editor.clear()
-                    editor.apply()
-                    startActivity(Intent(this, HalamanLogin::class.java))
-                    dialog.dismiss()
-                    finish()
-                }
-                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
-                .show()
-        }
 
 
 
