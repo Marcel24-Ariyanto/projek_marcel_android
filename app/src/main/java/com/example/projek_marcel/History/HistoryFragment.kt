@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projek_marcel.R
 import com.example.projek_marcel.databinding.FragmentHistoryBinding
+import com.google.android.material.chip.Chip
 
 class HistoryFragment : Fragment() {
     private var _binding: FragmentHistoryBinding? = null //
@@ -43,7 +45,21 @@ class HistoryFragment : Fragment() {
 
         val adapter = HistoryAdapter(requireContext(), messageList)
         binding.listViewItems.adapter = adapter
+//chip
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                Toast.makeText(requireContext(), "Filter: ${chip.text}",
+                    Toast.LENGTH_SHORT).show()
+// Lakukan logika filter di sini
+            }
+        }
+//        chip
     }
-
-
+//    berfungsi untuk menghapus memorynya jika sudah pindah ke fragment lain
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

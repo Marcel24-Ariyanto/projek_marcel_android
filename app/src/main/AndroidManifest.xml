@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projek_Marcel">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -42,7 +42,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".SplashScreenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -51,6 +51,18 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".webview.WebViewActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Tutorial.TutorialMessageActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".toolbar.TestingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Home.GridLayoutActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

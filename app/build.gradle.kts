@@ -40,6 +40,8 @@ android {
 
 dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0") //tambahin untuk listview
+    implementation("com.tbuonomo:dotsindicator:5.1.0") // menerapkan DotsIndicator
+    implementation("androidx.gridlayout:gridlayout:1.0.0") // menerapkan GridLayout
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)

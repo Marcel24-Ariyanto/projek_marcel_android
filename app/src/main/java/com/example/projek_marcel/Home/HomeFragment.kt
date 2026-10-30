@@ -36,7 +36,11 @@ class HomeFragment : Fragment() {
         binding.btnTambahMood.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
+        binding.gridLayout.setOnClickListener {
+            startActivity(Intent(requireContext(), GridLayoutActivity::class.java))
+        }
     }
+
 
 
 
