@@ -44,4 +44,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:backgroundTint="@color/primary_color"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Lanjutkan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
