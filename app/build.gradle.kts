@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -42,6 +43,11 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0") //tambahin untuk listview
     implementation("com.tbuonomo:dotsindicator:5.1.0") // menerapkan DotsIndicator
     implementation("androidx.gridlayout:gridlayout:1.0.0") // menerapkan GridLayout
+    val roomVersion = "2.8.4"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)

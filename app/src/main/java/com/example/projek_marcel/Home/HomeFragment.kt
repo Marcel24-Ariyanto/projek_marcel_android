@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.projek_marcel.MainActivity
+import com.example.projek_marcel.Mood.MoodFormActivity
 import com.example.projek_marcel.toolbar.ToolbarActivity
 import com.example.projek_marcel.databinding.FragmentHomeBinding
 import com.example.projek_marcel.webview.WebViewActivity
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
             startActivity(Intent(requireContext(), ToolbarActivity::class.java))
         }
         binding.btnTambahMood.setOnClickListener {
-            startActivity(Intent(requireContext(), WebViewActivity::class.java))
+            startActivity(Intent(requireContext(), MoodFormActivity::class.java))
         }
         binding.gridLayout.setOnClickListener {
             startActivity(Intent(requireContext(), GridLayoutActivity::class.java))
