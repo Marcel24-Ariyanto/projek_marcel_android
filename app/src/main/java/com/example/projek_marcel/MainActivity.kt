@@ -6,10 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent //p4
-import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder //p4
 import com.example.projek_marcel.databinding.ActivityMainBinding
-import com.example.projek_marcel.toolbar.ToolbarActivity
+import com.example.projek_marcel.toolbar.DetailActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var  binding: ActivityMainBinding
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 //        p5
         binding.btnLihatDetail.setOnClickListener {
-            startActivity(Intent(this, ToolbarActivity::class.java))
+            startActivity(Intent(this, DetailActivity::class.java))
         }
 //        p6
 

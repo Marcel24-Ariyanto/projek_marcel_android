@@ -1,5 +1,6 @@
 package com.example.projek_marcel.Profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projek_marcel.History.TabLayout.HistoryActivity
 import com.example.projek_marcel.R
 import com.example.projek_marcel.databinding.FragmentProfileBinding
 
@@ -39,7 +41,7 @@ class ProfileFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+//        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Profile"
 
 
@@ -53,15 +55,15 @@ class ProfileFragment : Fragment() {
             arrayOf("title", "desc"), // key yang diambil dari data
             intArrayOf(android.R.id.text1, android.R.id.text2) // tempat tampilnya
         )
-        binding.listViewItems.adapter = adapter
-        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = dataListWithDesc[position]
-            val title = selectedItem["title"]
-            val desc = selectedItem["desc"]
-            Toast.makeText(requireContext(), "Kamu memilih: $title ($desc)",
-                Toast.LENGTH_SHORT).show()
-
-        }
+//        binding.listViewItems.adapter = adapter
+//        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
+//            val selectedItem = dataListWithDesc[position]
+//            val title = selectedItem["title"]
+//            val desc = selectedItem["desc"]
+//            Toast.makeText(requireContext(), "Kamu memilih: $title ($desc)",
+//                Toast.LENGTH_SHORT).show()
+//
+//        }
 //
 
 //        val adapter = ArrayAdapter(
@@ -75,6 +77,9 @@ class ProfileFragment : Fragment() {
 //            Toast.makeText(requireContext(), "Kamu memilih: $selectedItem",
 //                Toast.LENGTH_SHORT).show()
 //        }
+        binding.menuMoodStats.setOnClickListener {
+            startActivity(Intent(requireContext(), HistoryActivity::class.java))
+        }
 
     }
 

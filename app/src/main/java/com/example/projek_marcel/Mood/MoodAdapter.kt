@@ -1,15 +1,14 @@
 package com.example.projek_marcel.Mood
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projek_marcel.Data.entity.MoodEntity
 import com.example.projek_marcel.databinding.ItemHistoryBinding
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.example.projek_marcel.toolbar.DetailActivity
 
-class MoodAdapter(
-    private val moods: List<MoodEntity>,
-    private val onDelete: (MoodEntity) -> Unit
+class MoodAdapter(private val moods: List<MoodEntity>
 ): RecyclerView.Adapter<MoodAdapter.MoodViewHolder>(){
     class MoodViewHolder(val binding: ItemHistoryBinding):
             RecyclerView.ViewHolder(binding.root)
@@ -27,13 +26,12 @@ class MoodAdapter(
         holder.binding.textSender.text = mood.title
         holder.binding.textMessage.text = mood.description
         holder.binding.emojiImg.setImageResource(mood.img)
-        holder.binding.btnDelete.setOnClickListener {
-            MaterialAlertDialogBuilder(holder.itemView.context)
-                .setTitle("Hapus Catatan")
-                .setMessage("Yakin ingin menghapus catatan ini?")
-                .setPositiveButton("Ya") {_,_ ->onDelete(mood)}
-                .setNegativeButton("Batal", null)
-                .show()
+        holder.binding.btnDetail.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DetailActivity::class.java).apply {
+                putExtra("MOOD_ID", mood.id)
+            }
+            context.startActivity(intent)
         }
 
     }

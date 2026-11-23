@@ -38,9 +38,9 @@ class HistoryActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
 // Atur judul untuk setiap tab
             when (position) {
-                0 -> tab.text = "Hari Ini"
-                1 -> tab.text = "1 Minggu"
-                2 -> tab.text = "1 Bulan"
+                0 -> tab.text = "1 Bulan"
+                1 -> tab.text = "3 Bulan"
+                2 -> tab.text = "6 Bulan "
                 3 -> tab.text = "1 Tahun"
             }
         }.attach()

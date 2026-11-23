@@ -52,7 +52,7 @@
                 <LinearLayout
                     android:id="@+id/cardSenang"
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="12dp"
@@ -64,8 +64,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:contentDescription="Senang"
                         android:scaleType="fitCenter"
                         android:src="@drawable/emoji_bahagia" />
@@ -84,7 +84,7 @@
                 <LinearLayout
                     android:id="@+id/cardBiasa"
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="12dp"
@@ -96,8 +96,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:contentDescription="Senang"
                         android:scaleType="fitCenter"
                         android:src="@drawable/emoji_biasa" />
@@ -116,7 +116,7 @@
                 <LinearLayout
                     android:id="@+id/cardSedih"
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginStart="10dp"
                     android:layout_marginBottom="12dp"
@@ -128,8 +128,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:contentDescription="Senang"
                         android:scaleType="fitCenter"
                         android:src="@drawable/emoji_sedih" />
@@ -148,7 +148,7 @@
                 <LinearLayout
                     android:id="@+id/cardMenangis"
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/selector_mood_card"
@@ -159,8 +159,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:contentDescription="Senang"
                         android:scaleType="fitCenter"
                         android:src="@drawable/emoji_lelah" />
@@ -179,7 +179,7 @@
                 <LinearLayout
                     android:id="@+id/cardMarah"
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/selector_mood_card"
@@ -190,8 +190,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:contentDescription="Senang"
                         android:scaleType="fitCenter"
                         android:src="@drawable/emoji_marah" />
@@ -209,7 +209,7 @@
                 <!-- Placeholder kolom ke-3 baris ke-2 agar ukuran tetap proporsional -->
                 <Space
                     android:layout_width="0dp"
-                    android:layout_height="115dp"
+                    android:layout_height="80dp"
                     android:layout_columnWeight="1"
                     android:layout_marginStart="10dp" />
 
@@ -288,7 +288,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Pilih Tanggal"
-                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    android:src="@drawable/ic_forward"
                     app:tint="#2C3550" />
             </LinearLayout>
 

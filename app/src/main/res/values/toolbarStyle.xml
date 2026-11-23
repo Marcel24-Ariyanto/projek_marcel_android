@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style khusus untuk Title Toolbar -->
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <!-- Jika punya custom font di folder res/font/, aktifkan baris di bawah: -->
+        <!-- <item name="android:fontFamily">@font/nama_font_kamu</item> -->
+    </style>
+
+    <!-- Style khusus untuk Subtitle Toolbar -->
+    <style name="ToolbarSubtitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">#757575</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <!-- <item name="android:fontFamily">@font/nama_font_subtitle</item> -->
+    </style>
+</resources>

@@ -34,7 +34,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".toolbar.ToolbarActivity"
+            android:name=".toolbar.DetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

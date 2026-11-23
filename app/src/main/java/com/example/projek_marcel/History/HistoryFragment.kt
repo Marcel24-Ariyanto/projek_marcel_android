@@ -21,10 +21,12 @@ import com.example.projek_marcel.Data.entity.MoodEntity
 import com.example.projek_marcel.History.TabLayout.HistoryActivity
 import com.example.projek_marcel.Mood.AppDatabase
 import com.example.projek_marcel.Mood.MoodAdapter
+import com.example.projek_marcel.Mood.MoodFormActivity
 import com.example.projek_marcel.R
 import com.example.projek_marcel.databinding.FragmentHistoryBinding
 import com.google.android.material.chip.Chip
 import kotlinx.coroutines.launch
+import com.example.projek_marcel.Data.DateFilterHelper
 
 class HistoryFragment : Fragment() {
     private var _binding: FragmentHistoryBinding? = null //
@@ -32,21 +34,21 @@ class HistoryFragment : Fragment() {
     private lateinit var db: AppDatabase
     private lateinit var adapter: MoodAdapter
     private val moods = mutableListOf<MoodEntity>()
-    val daftarGambar = listOf(
-        R.drawable.emoji_bahagia,
-        R.drawable.emoji_sedih,
-        R.drawable.emoji_biasa,
-        R.drawable.emoji_lelah,
-        R.drawable.emoji_marah
-    )
-    private val messageList = listOf(
-        HistoryModel("Senang", "Saya dapat kue tadi sama tetangga", daftarGambar[0]),
-        HistoryModel("Lelah", "Harini saya banyak sekali kegiatan", daftarGambar[3]),
-        HistoryModel("Lelah", "Harini tugas saya banyak sekali", daftarGambar[3]),
-        HistoryModel("Marah", "Teman kelompokku gada kerja, dan aku MARAHH!!!!", daftarGambar[4]),
-
-
-    )
+//    val daftarGambar = listOf(
+//        R.drawable.emoji_bahagia,
+//        R.drawable.emoji_sedih,
+//        R.drawable.emoji_biasa,
+//        R.drawable.emoji_lelah,
+//        R.drawable.emoji_marah
+//    )
+//    private val messageList = listOf(
+//        HistoryModel("Senang", "Saya dapat kue tadi sama tetangga", daftarGambar[0]),
+//        HistoryModel("Lelah", "Harini saya banyak sekali kegiatan", daftarGambar[3]),
+//        HistoryModel("Lelah", "Harini tugas saya banyak sekali", daftarGambar[3]),
+//        HistoryModel("Marah", "Teman kelompokku gada kerja, dan aku MARAHH!!!!", daftarGambar[4]),
+//
+//
+//    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,45 +61,50 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "History"
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                // Ganti sesuai nama file XML menu kamu di folder res/menu/
-                menuInflater.inflate(R.menu.menu_history, menu)
-            }
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Riwayat"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Riwayat minggu ini"
+//        val menuHost: MenuHost = requireActivity()
+//        menuHost.addMenuProvider(object : MenuProvider {
+//            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+//                // Ganti sesuai nama file XML menu kamu di folder res/menu/
+////                menuInflater.inflate(R.menu.menu_history, menu)
+//            }
+//
+//
+//            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+//                return when (menuItem.itemId) {
+//                    // Sesuaikan ID ini dengan ID item di file XML menu kamu
+//                    R.id.action_riwayat -> {
+//                        startActivity(Intent(requireContext(), HistoryActivity::class.java))
+//                        true
+//                    }
+//                    R.id.action_settings -> {
+//                        // TODO: Isi aksi untuk Settings nanti
+//                        true
+//                    }
+//                    else -> false
+//                }
+//            }
+//        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    // Sesuaikan ID ini dengan ID item di file XML menu kamu
-                    R.id.action_riwayat -> {
-                        startActivity(Intent(requireContext(), HistoryActivity::class.java))
-                        true
-                    }
-                    R.id.action_settings -> {
-                        // TODO: Isi aksi untuk Settings nanti
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+        binding.fabAddNote.setOnClickListener {
+            startActivity(Intent(requireContext(), MoodFormActivity::class.java))
+        }
 
 //        val adapter = HistoryAdapter(requireContext(), messageList)
 //        binding.listViewItems.adapter = adapter
 //chip
-        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
-            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
-            if (selectedChipId != null) {
-                val chip = group.findViewById<Chip>(selectedChipId)
-                Toast.makeText(requireContext(), "Filter: ${chip.text}",
-                    Toast.LENGTH_SHORT).show()
-// Lakukan logika filter di sini
-            }
-        }
+//        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+//            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
+//            if (selectedChipId != null) {
+//                val chip = group.findViewById<Chip>(selectedChipId)
+//                Toast.makeText(requireContext(), "Filter: ${chip.text}",
+//                    Toast.LENGTH_SHORT).show()
+//// Lakukan logika filter di sini
+//            }
+//        }
         db = AppDatabase.getInstance((requireContext()))
-        adapter = MoodAdapter(moods){mood-> deleteMood(mood)}
+        adapter = MoodAdapter(moods)
         binding.rvProducts.layoutManager = LinearLayoutManager(requireContext())
         binding.rvProducts.adapter = adapter
         fetchMoods()
@@ -111,7 +118,9 @@ class HistoryFragment : Fragment() {
     }
     private fun fetchMoods() {
         viewLifecycleOwner.lifecycleScope.launch {
-            val result = db.moodDao().getAll()
+            // Tinggal ganti string filter sesuai kebutuhan Tab B ("1_BULAN", "3_BULAN", dll.)
+            val startTime = DateFilterHelper.getStartTimeByFilter("1_MINGGU")
+            val result = db.moodDao().getMoodsAfter(startTime)
             moods.clear()
             moods.addAll(result)
             adapter.notifyDataSetChanged()

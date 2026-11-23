@@ -7,12 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.projek_marcel.HalamanLogin
-import com.example.projek_marcel.Home.GridLayoutActivity
-import com.example.projek_marcel.R
-import com.example.projek_marcel.databinding.FragmentHomeBinding
 import com.example.projek_marcel.databinding.FragmentTutorial3Binding
-import com.example.projek_marcel.toolbar.ToolbarActivity
-import com.example.projek_marcel.webview.WebViewActivity
 
 class TutorialFragment3 : Fragment() {
     private var _binding: FragmentTutorial3Binding? = null
